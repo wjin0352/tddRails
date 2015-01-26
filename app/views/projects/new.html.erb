@@ -1,20 +1,5 @@
 <h1>New Project</h1>
-<!--While creating this partial, you should also change all instances of @project to be project
-Why have we done this variable renaming? Because to be reusable, partial views shouldn’t rely on
-instance variables - they should be totally self-sufficient. When we render the partial from our main
-view, we can pass in the data that the partial needs to render - in this case, we’ll pass in the @project
-variable, which means it will be accessible as a local variable from within the partial-->
-<% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error")%>
-      prohibited this project from being saved:</h2>
-      <ul>
-        <% project.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>
+
 
 <!-- passing into project key, an instance variable @project the partial form can read! -->
 <%= render "form", project: @project %>
